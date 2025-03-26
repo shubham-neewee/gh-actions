@@ -3,12 +3,15 @@ on: push
 jobs: 
   first_job:
     runs-on: ubuntu-latest
-    steps: 
-     - name: Welcome Message
-       run: echo "Welcome Print"
-      
-     - name: List Files
-       run: ls
+    steps:
+    - name: Checkout Repo
+      uses: actions/checkout@v4
 
-     - name: Read Files
-       run: cat README.md
+    - name: Welcome Message
+      run: echo "Welcome Print"
+      
+    - name: List Files
+      run: ls -la 
+
+    - name: Read Files
+      run: cat README.md
